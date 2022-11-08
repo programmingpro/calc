@@ -1,0 +1,176 @@
+:root{
+    --main-calc-bg-color: #F1F2F3;
+    --main-sliderElem: white;
+    --main-elem: black;
+    --button-bg-color: white;
+    --button-bg-color2: #D2D3DA;
+    --button-bg-color3: #4B5EFC;
+    --upperText-color: #CBCBCC;
+    --lowerText-color: black;
+    --button-color: black;
+}
+body{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+    font-style: Work Sans;
+    font-family: 'Work Sans', sans-serif;
+}
+
+@media screen and (max-device-width: 480px) {
+    .calc, body, html{
+        height: 100%;
+        width: 100%;
+    }
+    body{
+        font-size: 350%;
+    }
+    .elem > div{
+        height: 14px;
+    }
+}
+
+@media screen and (min-device-width: 480px) {
+    .calc{
+        height: 600px;
+        width: 276px;
+    }
+    .elem > div{
+        height: 5px;
+    }
+}
+
+
+.calc{
+    background-color: var(--main-calc-bg-color);
+    border-color: #17171C;
+    border-radius: 1px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+.slider{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 3.5%;
+}
+.sliderElem{
+    border-radius: 30em;
+    background: var(--main-sliderElem);
+    height: 100%;
+    width: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+#check{
+    position: absolute;
+    width: 3em;
+    height: 1.5em;
+}
+
+.ball{
+    width: 1em;
+    height: 1em;
+    background: #D2D3DA;
+    border-radius: 50%;
+    margin: 0.2em;
+    order: 2;
+}
+.slider > input{
+    all:unset;
+}
+
+.el{
+    width: 1em;
+    height: 1em;
+    margin: 0.2em;
+    order: 1;
+}
+.el > img{
+    width: 100%;
+    height: 100%;
+}
+.calcView{
+    height: 18%;
+    margin-top: 15.7%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10%;
+    font-weight: 300;
+}
+
+.upperText{
+    font-size: 1.5em;
+    color: var(--upperText-color)
+}
+
+.lowerText{
+    font-size: 3em;
+    color: var(--lowerText-color);
+}
+
+.lowerText{
+    margin-top: 8%;
+}
+
+button {
+    margin-top: 3.6%;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5% 0 5%;
+    flex-wrap: wrap;
+    height: 50%;
+    z-index: 0;
+}
+.buttons > button{
+    width: 21%;
+    height: 17%;
+    background-color: var(--button-bg-color);
+    margin-bottom: 3%;
+    border-radius: 30%;
+    color: var(--button-color);
+}
+
+.buttons > button:nth-child(4n){
+    background-color: var(--button-bg-color3);
+}
+.buttons > button:nth-child(4n){
+    color: var(--button-color);
+}
+
+.buttons > button:nth-child(-n+3){
+    background-color: var(--button-bg-color2);
+}
+
+
+.elem{
+    display: flex;
+    justify-content: center;
+}
+
+.elem > div{
+    width: 43%;
+    background-color: var(--main-elem);
+    border-radius: 100em;
+    margin-top: 30%;
+}
+
+
+
