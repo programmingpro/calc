@@ -122,7 +122,16 @@ for(var i = 0; i < c.length; i++) {
         } else if ((this.innerText == "=") && (IsOpp == false)) {
             ltext.innerText = uptext.innerText
             data = ""
-
+            if((document.getElementsByClassName("lowerText")[0].innerText.length < 7)){
+                k = 1
+            }
+            if((document.getElementsByClassName("lowerText")[0].innerText.length > 7) && (document.getElementsByClassName("lowerText")[0].innerText.length < 10)){
+                k = 0.8
+            }
+            if((document.getElementsByClassName("lowerText")[0].innerText.length > 10)){
+                k = 0.5
+            }
+            document.getElementsByClassName("lowerText")[0].style.fontSize = len * k + "px"
             IsDouble = false;
 
         } else if (this.innerText == ".") {
@@ -141,8 +150,11 @@ for(var i = 0; i < c.length; i++) {
             ltext.innerText += "-1×"
 
         }
-
-        uptext.innerText = data + ""
+        if(data != ""){
+            uptext.innerText = parseFloat(data.toFixed(5)) + ""
+        }else{
+            uptext.innerText = ""
+        }
         console.log(data + " IsOpp " + IsOpp)
         document.getElementsByClassName("lowerText")[0].style.fontSize = len * k + "px"
         if((document.getElementsByClassName("lowerText")[0].innerText.length < 7)){
@@ -152,7 +164,7 @@ for(var i = 0; i < c.length; i++) {
             k = 0.8
         }
         if((document.getElementsByClassName("lowerText")[0].innerText.length > 10)){
-            k = 0.6
+            k = 0.5
         }
         console.log(k, document.getElementsByClassName("lowerText")[0].innerText.length, len)
 
