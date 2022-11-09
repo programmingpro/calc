@@ -46,9 +46,14 @@ for(var i = 0; i < c.length; i++) {
             
 
         } else if (this.innerText == "⌫") {
+            console.log(ltext.innerText.slice(-1))
+            if((ltext.innerText.length > 0) && (ltext.innerText.slice(-1) == ".")){
+                IsDouble = false;
+            }
             ltext.innerText = ltext.innerText.slice(0, -1);
             let a = ltext.innerText
             if (ltext.innerText.length > 0) {
+                console.log(IsDouble, ltext.innerText.slice(0, -1) + "  kk")
                 if((isNaN(parseFloat(a.slice(-1))) == false) || (a.slice(-1) == '%')){
                     result = (a.replace(/÷/g, '/'))
                     result = (result.replace(/%/g, '*0.01'))
@@ -122,13 +127,13 @@ for(var i = 0; i < c.length; i++) {
         } else if ((this.innerText == "=") && (IsOpp == false)) {
             ltext.innerText = uptext.innerText
             data = ""
-            if((document.getElementsByClassName("lowerText")[0].innerText.length < 7)){
+            if((document.getElementsByClassName("lowerText")[0].innerText.length <= 7)){
                 k = 1
             }
             if((document.getElementsByClassName("lowerText")[0].innerText.length > 7) && (document.getElementsByClassName("lowerText")[0].innerText.length < 10)){
                 k = 0.8
             }
-            if((document.getElementsByClassName("lowerText")[0].innerText.length > 10)){
+            if((document.getElementsByClassName("lowerText")[0].innerText.length >= 10)){
                 k = 0.5
             }
             document.getElementsByClassName("lowerText")[0].style.fontSize = len * k + "px"
@@ -156,16 +161,16 @@ for(var i = 0; i < c.length; i++) {
             uptext.innerText = ""
         }
         console.log(data + " IsOpp " + IsOpp)
-        document.getElementsByClassName("lowerText")[0].style.fontSize = len * k + "px"
-        if((document.getElementsByClassName("lowerText")[0].innerText.length < 7)){
+        if((document.getElementsByClassName("lowerText")[0].innerText.length <= 7)){
             k = 1
         }
         if((document.getElementsByClassName("lowerText")[0].innerText.length > 7) && (document.getElementsByClassName("lowerText")[0].innerText.length < 10)){
             k = 0.8
         }
-        if((document.getElementsByClassName("lowerText")[0].innerText.length > 10)){
+        if((document.getElementsByClassName("lowerText")[0].innerText.length >= 10)){
             k = 0.5
         }
+        document.getElementsByClassName("lowerText")[0].style.fontSize = len * k + "px"
         console.log(k, document.getElementsByClassName("lowerText")[0].innerText.length, len)
 
     })
