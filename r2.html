@@ -2,42 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        // Функция, которая выполняется при загрузке страницы
-        function redirectToNewDomain() {
-            // Укажите здесь целевой домен, на который нужно перенаправить
-            const TARGET_DOMAIN = "https://aliexpress.com";
-            
-            // Получаем текущие GET-параметры
-            const currentParams = new URLSearchParams(window.location.search);
-            
-            // Создаем новый URL с целевым доменом
-            const newUrl = new URL(TARGET_DOMAIN);
-            
-            // Добавляем все параметры к новому URL
-            currentParams.forEach((value, key) => {
-                newUrl.searchParams.append(key, value);
-            });
-            
-            // Выполняем перенаправление
-            window.location.href = newUrl.toString();
-        }
-        
-        // Вызываем функцию перенаправления при загрузке страницы
-        window.onload = redirectToNewDomain;
+        // Минимальный код для мгновенного редиректа
+        (function() {
+            const targetDomain = "https://aliexpress.com"; // Замените на нужный домен
+            const query = window.location.search; // Берём строку параметров как есть (без лишнего парсинга)
+            window.location.replace(targetDomain + query); // Мгновенный редирект без истории в браузере
+        })();
     </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a id="redirectLink" href="#">click here</a>.</p>
-    
-    <script>
-        // Также делаем ссылку рабочей на случай, если автоматическое перенаправление не сработает
-        document.getElementById('redirectLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            redirectToNewDomain();
-        });
-    </script>
+    <p>Redirecting... <a href="#" onclick="location.reload()">Click here if nothing happens</a>.</p>
 </body>
 </html>
