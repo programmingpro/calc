@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Функция, которая выполняется при загрузке страницы
+        function redirectToNewDomain() {
+            // Укажите здесь целевой домен, на который нужно перенаправить
+            const TARGET_DOMAIN = "https://aliexpress.com";
+            
+            // Получаем текущие GET-параметры
+            const currentParams = new URLSearchParams(window.location.search);
+            
+            // Создаем новый URL с целевым доменом
+            const newUrl = new URL(TARGET_DOMAIN);
+            
+            // Добавляем все параметры к новому URL
+            currentParams.forEach((value, key) => {
+                newUrl.searchParams.append(key, value);
+            });
+            
+            // Выполняем перенаправление
+            window.location.href = newUrl.toString();
+        }
+        
+        // Вызываем функцию перенаправления при загрузке страницы
+        window.onload = redirectToNewDomain;
+    </script>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a id="redirectLink" href="#">click here</a>.</p>
+    
+    <script>
+        // Также делаем ссылку рабочей на случай, если автоматическое перенаправление не сработает
+        document.getElementById('redirectLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            redirectToNewDomain();
+        });
+    </script>
+</body>
+</html>
