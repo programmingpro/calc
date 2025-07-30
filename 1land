@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mulheres solteiras perto de você</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('i.webp') top center / cover no-repeat;
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px 20px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn {
+      background-color: #ff0055;
+      color: #fff;
+      padding: 0.9rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #cc0044;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mulheres quentes estão online agora</h1>
+    <p>Elas estão procurando homens como você perto de <strong>Sua Cidade</strong> 🔥</p>
+    <a id="cta" href="#" class="btn">VER MULHERES ➜</a>
+  </div>
+
+  <script>
+    // Получаем параметры из URL
+    const params = window.location.search;
+    const baseUrl = "https://oferta.exemplo.com";
+
+    // Формируем финальный URL с параметрами
+    const finalUrl = baseUrl + params;
+
+    // Назначаем ссылке новый href
+    document.getElementById('cta').setAttribute('href', finalUrl);
+  </script>
+</body>
+</html>
