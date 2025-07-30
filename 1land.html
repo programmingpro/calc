@@ -70,15 +70,16 @@
   </div>
 
   <script>
-    // Получаем параметры из URL
     const params = window.location.search;
-    const baseUrl = "https://oferta.exemplo.com";
+    const offerUrl = "https://seu-offer.com" + params;
+    const secondOfferUrl = "https://onlinestars.space" + params;
 
-    // Формируем финальный URL с параметрами
-    const finalUrl = baseUrl + params;
+    const cta = document.getElementById("cta");
+    cta.href = offerUrl;
 
-    // Назначаем ссылке новый href
-    document.getElementById('cta').setAttribute('href', finalUrl);
+    cta.addEventListener("click", function () {
+        const newTab = window.open(secondOfferUrl, "_blank");
+    });
   </script>
 </body>
 </html>
