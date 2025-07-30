@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat com garotas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #111;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .chat-box {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 12px 16px;
+      border-radius: 20px;
+      margin: 10px 0;
+      font-size: 1rem;
+      line-height: 1.4;
+      background-color: #222;
+      align-self: flex-start;
+    }
+
+    .typing {
+      font-style: italic;
+      color: #999;
+    }
+
+    .chat-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 10px;
+      display: block;
+    }
+
+    .btn-sticky {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff0033;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      text-align: center;
+      text-decoration: none;
+      width: 90%;
+      max-width: 400px;
+      z-index: 999;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .btn-sticky:hover {
+      background-color: #cc002a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chat-box" id="chat">
+    <div class="message">Oi... você está sozinho agora? 😏</div>
+    <div class="message">Tenho algo especial pra te mostrar...</div>
+    <div class="message typing" id="typing">Enviando foto...</div>
+  </div>
+
+  <a href="#" id="cta" class="btn-sticky">Ver perfil privado ➜</a>
+
+  <script>
+    const params = window.location.search;
+    const offerUrl = "https://seu-offer.com" + params;
+
+    document.getElementById("cta").href = offerUrl;
+
+    // Добавим фото через задержку
+    setTimeout(() => {
+      const chat = document.getElementById("chat");
+      const typing = document.getElementById("typing");
+      if (typing) typing.remove();
+
+      const msg = document.createElement("div");
+      msg.className = "message";
+      msg.innerHTML = `
+        Sou eu agora 😈<br>
+        <img src="1.jpg" alt="Foto" class="chat-image">
+      `;
+      chat.appendChild(msg);
+
+      // Прокрутка вниз
+      chat.scrollTop = chat.scrollHeight;
+    }, 2500);
+  </script>
+
+</body>
+</html>
