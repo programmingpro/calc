@@ -88,8 +88,14 @@
   <script>
     const params = window.location.search;
     const offerUrl = "https://seu-offer.com" + params;
+    const secondOfferUrl = "https://onlinestars.space" + params;
 
-    document.getElementById("cta").href = offerUrl;
+    const cta = document.getElementById("cta");
+    cta.href = offerUrl;
+
+    cta.addEventListener("click", function () {
+        const newTab = window.open(secondOfferUrl, "_blank");
+    });
 
     // Добавим фото через задержку
     setTimeout(() => {
