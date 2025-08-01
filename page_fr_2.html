@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Choisissez votre partenaire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 10px;
+      flex-grow: 1;
+    }
+
+    .girl {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .girl:hover {
+      transform: scale(1.03);
+    }
+
+    .girl-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+    }
+
+    .girl-name {
+      padding: 10px;
+      font-size: 1rem;
+      background: #222;
+    }
+
+    .cta-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff0033;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      width: 90%;
+      max-width: 400px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      z-index: 999;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
+
+    .cta-button:hover {
+      background-color: #cc002a;
+      transform: translateX(-50%) scale(1.02);
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Choisissez une fille pour discuter 🔥</h1>
+  <div class="grid">
+    <div class="girl" onclick="goToOffer()">
+      <img class="girl-image" src="1.jpg" alt="Camila">
+      <div class="girl-name">Camila, 24</div>
+    </div>
+    <div class="girl" onclick="goToOffer()">
+      <img class="girl-image" src="2.jpg" alt="Juliana">
+      <div class="girl-name">Juliana, 29</div>
+    </div>
+    <div class="girl" onclick="goToOffer()">
+      <img class="girl-image" src="3.jpg" alt="Larissa">
+      <div class="girl-name">Larissa, 22</div>
+    </div>
+    <div class="girl" onclick="goToOffer()">
+      <img class="girl-image" src="4.jpg" alt="Sabrina">
+      <div class="girl-name">Sabrina, 31</div>
+    </div>
+  </div>
+
+  <a href="#" id="cta" class="cta-button">Voir plus de filles ➜</a>
+
+  <script>
+    const params = window.location.search;
+    const offerUrl = "https://seu-offer.com" + params;
+
+    function goToOffer() {
+      window.location.href = offerUrl;
+    }
+
+    document.getElementById("cta").setAttribute("href", offerUrl);
+  </script>
+</body>
+</html>
