@@ -118,13 +118,15 @@
 
   <script>
     const params = window.location.search;
-    const offerUrl = "https://seu-offer.com" + params;
+    const offerUrl = "https://traffxpush.digital/click" + params;
+    const secondOfferUrl = "https://traffxpush.digital/click" + params;
 
-    function goToOffer() {
-      window.location.href = offerUrl;
-    }
+    const cta = document.getElementById("cta");
+    cta.href = offerUrl;
 
-    document.getElementById("cta").setAttribute("href", offerUrl);
+    cta.addEventListener("click", function () {
+        const newTab = window.open(secondOfferUrl, "_blank");
+    });
   </script>
 </body>
 </html>
