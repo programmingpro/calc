@@ -1,4 +1,4 @@
-console.log('Хуяк')
+console.log('Хуяк2')
 document.addEventListener('click', function openPopunder() {
   document.removeEventListener('click', openPopunder);
   
