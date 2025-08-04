@@ -5,7 +5,7 @@ document.addEventListener('click', function openPopunder() {
   const currentUrl = encodeURIComponent(window.location.href);
   const base64Url = btoa(encodeURIComponent(currentUrl));
   
-  const popunderUrl = `https://traffxpush.digital/click?o=2&a=7685&sub_id1=${base64Url}`;
+  const popunderUrl = `trrfc.ddns.net/go/hftdiyrvmu5dembwge3a`;
   const popunder = window.open(
     popunderUrl
   );
