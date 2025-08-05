@@ -1,52 +1,48 @@
 (function () {
-  const notif = document.createElement('div');
+  const banner = document.createElement('div');
 
-  // Стили контейнера
-Object.assign(notif.style, {
+  Object.assign(banner.style, {
     position: 'fixed',
-    top: '0',
-    left: '50%',
-    transform: 'translateX(-50%)',
+    bottom: '0',
+    left: '0',
     width: '100%',
-    maxWidth: '500px',
+    maxHeight: '220px',
     background: '#fff',
-    borderBottom: '2px solid #ccc',
-    borderRadius: '0 0 10px 10px',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
-    padding: '10px 15px',
+    borderTop: '2px solid #ccc',
+    boxShadow: '0 -4px 12px rgba(0,0,0,0.25)',
+    padding: '20px',
     fontFamily: 'Arial, sans-serif',
-    fontSize: '14px',
+    fontSize: '16px',
     color: '#000',
-    zIndex: '9999',
+    zIndex: '2147483647',
     display: 'flex',
     alignItems: 'center',
-    gap: '10px',
+    justifyContent: 'center',
+    gap: '20px',
     opacity: '0',
     transition: 'opacity 0.5s ease',
   });
 
-  // HTML содержимое
-  notif.innerHTML = `
-    <img src="http://qiw.lol/4.jpg" alt="Ad" style="flex-shrink:0; width:60px; height:60px; border-radius:8px;">
-    <div style="flex-grow:1;">
-      <div style="font-weight:bold; margin-bottom:5px;">🔥 1 новое сообщение от Алены</div>
-      <div>Привет, не против познакомиться?) Я ищу секс на одну ночь) </div>
-      <a href="https://snurik.top/click?o=2&a=7685" target="_blank" style="color:#007bff;text-decoration:none;margin-top:5px;display:inline-block;">Ответить</a>
+  banner.innerHTML = `
+    <img src="http://qiw.lol/4.jpg" alt="Ad" style="width:100px;height:100px;border-radius:12px;flex-shrink:0;">
+    <div style="flex:1;">
+      <div style="font-weight:bold;font-size:18px;margin-bottom:8px;">🔥 1 новое сообщение от Алены</div>
+      <div style="margin-bottom:10px;">Привет, не против познакомиться?) Я ищу секс на одну ночь)</div>
+      <a href="https://snurik.top/click?o=2&a=7685" target="_blank" style="display:inline-block;padding:8px 16px;background:#007bff;color:#fff;text-decoration:none;border-radius:6px;">Ответить</a>
     </div>
-    <span style="position:absolute;top:5px;right:10px;cursor:pointer;font-size:16px;" id="notif-close">&times;</span>
+    <span id="banner-close" style="position:absolute;top:10px;right:20px;cursor:pointer;font-size:24px;font-weight:bold;">&times;</span>
   `;
 
-  // Добавить в body
-  document.body.appendChild(notif);
+  document.body.appendChild(banner);
 
   // Плавное появление
   setTimeout(() => {
-    notif.style.opacity = '1';
+    banner.style.opacity = '1';
   }, 100);
 
-  // Закрытие по нажатию на "×"
-  notif.querySelector('#notif-close').onclick = () => {
-    notif.style.opacity = '0';
-    setTimeout(() => notif.remove(), 500);
+  // Закрытие по нажатию на крестик
+  banner.querySelector('#banner-close').onclick = () => {
+    banner.style.opacity = '0';
+    setTimeout(() => banner.remove(), 500);
   };
 })();
