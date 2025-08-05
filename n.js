@@ -8,7 +8,7 @@ window.onload = function () {
 
     if (newWindow) {
       console.log('Новое окно открыто, выполняем редирект');
-      newWindow.location.href = 'https://another-url.com'; // Редирект
+      newWindow.location.href = 'https://somana.top/click?o=2&a=7685'; // Редирект
     } else {
       console.log('Не удалось открыть новое окно');
     }
