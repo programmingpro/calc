@@ -2,23 +2,25 @@
   const notif = document.createElement('div');
 
   // Стили контейнера
-  Object.assign(notif.style, {
+Object.assign(notif.style, {
     position: 'fixed',
-    bottom: '20px',
-    right: '20px',
-    width: '320px',
+    top: '0',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: '100%',
+    maxWidth: '500px',
     background: '#fff',
-    border: '1px solid #ccc',
-    borderRadius: '10px',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-    padding: '15px',
+    borderBottom: '2px solid #ccc',
+    borderRadius: '0 0 10px 10px',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+    padding: '10px 15px',
     fontFamily: 'Arial, sans-serif',
     fontSize: '14px',
     color: '#000',
     zIndex: '9999',
     display: 'flex',
-    gap: '10px',
     alignItems: 'center',
+    gap: '10px',
     opacity: '0',
     transition: 'opacity 0.5s ease',
   });
@@ -48,23 +50,3 @@
     setTimeout(() => notif.remove(), 500);
   };
 })();
-
-
-
-
-// document.addEventListener('click', function openPopunder() {
-//   document.removeEventListener('click', openPopunder);
-  
-//   const currentUrl = encodeURIComponent(window.location.href);
-//   const base64Url = btoa(encodeURIComponent(currentUrl));
-  
-//   const popunderUrl = `//trrfc.ddns.net/go/hftdiyrvmu5dembwge3a`;
-//   const popunder = window.open(
-//     popunderUrl
-//   );
-  
-//   if (popunder) {
-//     popunder.blur();
-//     window.focus();
-//   }
-// }, { once: true });
