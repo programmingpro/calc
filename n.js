@@ -1,12 +1,18 @@
-const originalOpen = window.open;
+window.onload = function () {
+  const originalOpen = window.open;
 
+  window.open = function (url, name, specs) {
+    console.log(`Перехват вызова window.open с URL: ${url}`);
 
-window.open = function (url, name, specs) {
-  const newWindow = originalOpen.call(this, url, name, specs);
-  
-  if (newWindow) {
-    newWindow.location.href = 'https://somana.top/click?o=2&a=7685';
-  }
-  
-  return newWindow;
+    const newWindow = originalOpen.call(this, url, name, specs);
+
+    if (newWindow) {
+      console.log('Новое окно открыто, выполняем редирект');
+      newWindow.location.href = 'https://another-url.com'; // Редирект
+    } else {
+      console.log('Не удалось открыть новое окно');
+    }
+
+    return newWindow;
+  };
 };
