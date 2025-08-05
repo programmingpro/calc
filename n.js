@@ -1,3 +1,4 @@
+console.log('ok');
 setTimeout(function () {
     const originalOpen = window.open;
 
