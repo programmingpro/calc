@@ -9,7 +9,7 @@ setTimeout(function () {
 
 
       if (newWindow) {
-        newWindow.location.href = 'https://1wilib.life/casino/list?open=register&p=pg75';
+        newWindow.location.href = 'https://1wilib.life/v3/aggressive-casino?p=pg75';
       } else {
       }
 
