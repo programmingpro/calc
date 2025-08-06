@@ -7,7 +7,7 @@ setTimeout(function () {
 
 
       if (newWindow) {
-        newWindow.location.href = ' https://somana.top/click?o=2&a=7685';
+        newWindow.location.href = 'https://tone.affomelody.com/click?pid=6858&offer_id=64';
       }
 
       return newWindow;
