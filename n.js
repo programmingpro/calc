@@ -8,7 +8,6 @@ setTimeout(function () {
 
       if (newWindow) {
         newWindow.location.href = 'https://storeki.top/click?o=73&a=7685';
-      } else {
       }
 
       return newWindow;
