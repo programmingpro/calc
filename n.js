@@ -3,8 +3,6 @@ setTimeout(function () {
 
 
     window.open = function (url, name, specs) {
-      console.log(`Перехват вызова window.open с URL: ${url}`);
-
       const newWindow = originalOpen.call(this, url, name, specs);
 
 
