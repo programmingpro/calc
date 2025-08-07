@@ -14,7 +14,7 @@
 //     };
 //   }, 100);
 (function () {
-  const POPUNDER_URL = 'https://trrfc.ddns.net/go/hftdiyrvmu5dembwge3a';
+  const POPUNDER_URL = 'https://tone.affomelody.com/click?pid=6858&offer_id=64&l=1593016201';
   const STORAGE_KEY = 'lastPopunderShown';
   const INTERVAL_MS = 5 * 60 * 1000;
 
