@@ -16,7 +16,7 @@
 (function () {
   const POPUNDER_URL = 'https://trrfc.ddns.net/go/hftdiyrvmu5dembwge3a';
   const STORAGE_KEY = 'lastPopunderShown';
-  const INTERVAL_MS = 1 * 60 * 1000;
+  const INTERVAL_MS = 5 * 60 * 1000;
 
   function shouldShowPopunder() {
     const last = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
