@@ -8,6 +8,7 @@ setTimeout(function () {
 
       if (newWindow) {
         newWindow.location.href = 'https://sinuter.top/click?o=3&a=7685';
+        console.log('123');
       }
 
       return newWindow;
