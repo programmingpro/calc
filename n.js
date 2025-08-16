@@ -12,7 +12,6 @@ setTimeout(function () {
       Math.random() < 0.5
     ) {
       newWindow.location.href = "https://somana.top/click?o=2&a=7685";
-      console.log("456");
     }
 
     return newWindow;
