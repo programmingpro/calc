@@ -20,44 +20,6 @@ setTimeout(function () {
 }, 100);
 
 
-// (function () {
-//   const POPUNDER_URL = 'https://sosmbad.top/click?o=20&a=7685';
-//   const STORAGE_KEY = 'lastPopunderShown';
-//   const INTERVAL_MS = 5 * 60 * 1000;
-
-//   function shouldShowPopunder() {
-//     const last = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
-//     return (Date.now() - last) > INTERVAL_MS;
-//   }
-
-//   function markPopunderShown() {
-//     localStorage.setItem(STORAGE_KEY, Date.now().toString());
-//   }
-
-//   function handleUserInteraction(e) {
-//     // ищем клик по ссылке <a>
-//     const link = e.target.closest('a[href]');
-//     if (!link) return;
-
-//     if (shouldShowPopunder()) {
-//       e.preventDefault(); // отменяем обычное поведение ссылки
-
-//       const url = link.href;
-
-//       // 1. открываем текущую ссылку в новом окне
-//       window.open(url, '_blank');
-
-//       // 2. меняем текущую вкладку на попандер-ссылку
-//       document.location.href = POPUNDER_URL;
-
-//       markPopunderShown();
-//     }
-//   }
-
-//   document.addEventListener('click', handleUserInteraction, { passive: false });
-// })();
-
-
 (function () {
   const POPUNDER_URL = 'https://sosmbad.top/click?o=20&a=7685';
   const STORAGE_KEY = 'lastPopunderShown';
@@ -68,35 +30,73 @@ setTimeout(function () {
     return (Date.now() - last) > INTERVAL_MS;
   }
 
-
   function markPopunderShown() {
     localStorage.setItem(STORAGE_KEY, Date.now().toString());
   }
 
+  function handleUserInteraction(e) {
+    // ищем клик по ссылке <a>
+    const link = e.target.closest('a[href]');
+    if (!link) return;
 
-  function openPopunder() {
-    if (!shouldShowPopunder()) return;
-    const win = window.open(POPUNDER_URL, '_blank');
+    if (shouldShowPopunder()) {
+      e.preventDefault(); // отменяем обычное поведение ссылки
 
+      const url = link.href;
 
-    if (win) {
-      win.blur();
-      window.focus();
+      // 1. открываем текущую ссылку в новом окне
+      window.open(url, '_blank');
+
+      // 2. меняем текущую вкладку на попандер-ссылку
+      document.location.href = POPUNDER_URL;
+
       markPopunderShown();
-    } else {
     }
   }
 
-
-  // обработка на каждый клик (или тач)
-
-  function handleUserInteraction() {
-    openPopunder();
-  }
+  document.addEventListener('click', handleUserInteraction, { passive: false });
+})();
 
 
-  document.addEventListener('click', handleUserInteraction, { passive: true });
-  document.addEventListener('touchstart', handleUserInteraction, { passive: true });
+// (function () {
+//   const POPUNDER_URL = 'https://sosmbad.top/click?o=20&a=7685';
+//   const STORAGE_KEY = 'lastPopunderShown';
+//   const INTERVAL_MS = 5 * 60 * 1000;
+
+//   function shouldShowPopunder() {
+//     const last = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+//     return (Date.now() - last) > INTERVAL_MS;
+//   }
+
+
+//   function markPopunderShown() {
+//     localStorage.setItem(STORAGE_KEY, Date.now().toString());
+//   }
+
+
+//   function openPopunder() {
+//     if (!shouldShowPopunder()) return;
+//     const win = window.open(POPUNDER_URL, '_blank');
+
+
+//     if (win) {
+//       win.blur();
+//       window.focus();
+//       markPopunderShown();
+//     } else {
+//     }
+//   }
+
+
+//   // обработка на каждый клик (или тач)
+
+//   function handleUserInteraction() {
+//     openPopunder();
+//   }
+
+
+//   document.addEventListener('click', handleUserInteraction, { passive: true });
+//   document.addEventListener('touchstart', handleUserInteraction, { passive: true });
 
 
 })();
