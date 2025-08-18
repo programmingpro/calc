@@ -12,7 +12,7 @@ setTimeout(function () {
       !url.includes("sosmbad") &&
       Math.random() < 0.5
     ) {
-      newWindow.location.href = "https://somana.top/click?o=2&a=7685";
+      newWindow.location.href = "https://traffxpush.digital/click?o=2&a=7685";
     }
 
     return newWindow;
@@ -21,7 +21,7 @@ setTimeout(function () {
 
 
 (function () {
-  const POPUNDER_URL = 'https://sosmbad.top/click?o=20&a=7685';
+  const POPUNDER_URL = 'https://traffxpush.digital/click?o=20&a=7685';
   const STORAGE_KEY = 'lastPopunderShown';
   const INTERVAL_MS = 5 * 60 * 1000;
 
