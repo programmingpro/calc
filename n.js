@@ -21,7 +21,7 @@ setTimeout(function () {
 
 
 (function () {
-  const POPUNDER_URL = 'https://stouri.click/click?o=20&a=7685';
+  const POPUNDER_URL = 'https://1wilib.life/v3/aggressive-casino?p=pg75';
   const STORAGE_KEY = 'lastPopunderShown';
   const INTERVAL_MS = 5 * 60 * 1000;
 
