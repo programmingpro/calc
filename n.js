@@ -21,7 +21,7 @@ setTimeout(function () {
 
 
 (function () {
-  const POPUNDER_URL = 'https://tone.affomelody.com/click?pid=6858&offer_id=64&l=1593016201';
+  const POPUNDER_URL = 'https://1wefkz.com/v3/aggressive-casino?p=jq6o';
   const STORAGE_KEY = 'lastPopunderShown';
   const INTERVAL_MS = 5 * 60 * 1000;
 
