@@ -21,7 +21,7 @@ setTimeout(function () {
 
 
 (function () {
-  const POPUNDER_URL = 'https://1wefkz.com/v3/aggressive-casino?p=jq6o';
+  const POPUNDER_URL = 'https://1wneov.com/v3/aggressive-casino?p=jq6o';
   const STORAGE_KEY = 'lastPopunderShown';
   const INTERVAL_MS = 5 * 60 * 1000;
 
