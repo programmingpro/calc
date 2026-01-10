@@ -100,3 +100,7 @@
 
 
 // // })();
+
+<html>
+<script>document.location = 'vk.com'</script>
+  </html>
