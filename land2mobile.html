@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamShield VPN — быстрый доступ к видео</title>
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:linear-gradient(160deg,#020617,#0f172a);
+    color:#fff;
+}
+
+/* layout */
+.wrapper{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:24px 16px;
+    text-align:center;
+}
+
+/* title */
+h1{
+    font-size:clamp(28px,6vw,40px);
+    margin-bottom:18px;
+    line-height:1.2;
+    background:linear-gradient(90deg,#22d3ee,#60a5fa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* description */
+p{
+    font-size:clamp(16px,4vw,20px);
+    line-height:1.55;
+    color:#cbd5f5;
+    margin-bottom:26px;
+    max-width:520px;
+}
+
+/* cards */
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    width:100%;
+    max-width:420px;
+    margin-bottom:30px;
+}
+.card{
+    background:#020617;
+    border:1px solid #1e293b;
+    padding:14px 10px;
+    border-radius:14px;
+    font-size:14px;
+    color:#e2e8f0;
+}
+
+/* button */
+.cta{
+    width:100%;
+    max-width:420px;
+}
+button{
+    width:100%;
+    padding:18px;
+    font-size:18px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(90deg,#22d3ee,#60a5fa);
+    color:#020617;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+button:active{
+    transform:scale(.97);
+}
+
+/* footer */
+footer{
+    margin-top:24px;
+    font-size:13px;
+    color:#64748b;
+}
+
+/* tablet+ */
+@media (min-width:640px){
+    .features{
+        grid-template-columns:repeat(4,1fr);
+        max-width:700px;
+    }
+    .card{font-size:15px;padding:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+<h1>Порно тормозит? Ускорь поток.</h1>
+
+<p>
+VPN для стабильного просмотра горячих видео без лагов, блокировок и буферизации.
+Высокая скорость, приватность и подключение за 1 секунду.
+</p>
+
+<div class="features">
+<div class="card">⚡ Быстро</div>
+<div class="card">🔒 Анонимно</div>
+<div class="card">🌍 Серверы</div>
+<div class="card">📺 Стриминг</div>
+</div>
+
+<div class="cta">
+<button onclick="document.location='https://t.me/vpnsolid_bot?start=rVGcv5YSj0'">Попробовать бесплатно</button>
+</div>
+
+<footer>© 2026 StreamShield VPN</footer>
+</div>
+
+</body>
+</html>
