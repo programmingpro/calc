@@ -2,19 +2,23 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Тест: На какую породу собак ты похож?</title>
+  <title>Тест: На какую собаку ты похож?</title>
   <style>
     body { font-family: Arial, sans-serif; max-width: 700px; margin: 30px auto; padding: 0 15px; }
     h1 { text-align: center; }
-    .question { margin: 20px 0; }
+    p { text-align: center; }
+    .question { margin: 20px 0; font-size: 18px; }
     .answers button { display: block; margin: 5px 0; padding: 10px; font-size: 16px; cursor: pointer; width: 100%; }
+    #progress { text-align: center; font-weight: bold; margin-bottom: 10px; }
     #result { margin-top: 30px; font-size: 20px; font-weight: bold; text-align: center; }
   </style>
 </head>
 <body>
 
-<h1>Тест: На какую породу собак ты похож?</h1>
+<h1>Тест: На какую собаку ты похож?</h1>
+<p>Отвечай честно на вопросы про твой характер и привычки. В конце узнаешь, на какую породу собак ты похож! 🐶</p>
 
+<div id="progress"></div>
 <div id="quiz"></div>
 <div id="result"></div>
 
@@ -52,7 +56,6 @@ const questions = [
   { q: "Ты самостоятельный в действиях?", a: ["Да", "Иногда", "Нет"] }
 ];
 
-// Простейшая система подсчета очков по типам собак
 const dogTypes = [
   { name: "Лабрадор", score: 0 },
   { name: "Бультерьер", score: 0 },
@@ -68,9 +71,12 @@ function showQuestion() {
     showResult();
     return;
   }
+
+  document.getElementById("progress").innerText = `Вопрос ${currentQuestion + 1} / ${questions.length}`;
+
   const quizDiv = document.getElementById("quiz");
   quizDiv.innerHTML = `
-    <div class="question"><strong>Вопрос ${currentQuestion + 1}:</strong> ${questions[currentQuestion].q}</div>
+    <div class="question">${questions[currentQuestion].q}</div>
     <div class="answers">
       ${questions[currentQuestion].a.map((ans, i) => `<button onclick="answer(${i})">${ans}</button>`).join('')}
     </div>
@@ -91,7 +97,23 @@ function answer(choice) {
 function showResult() {
   const resultDiv = document.getElementById("result");
   dogTypes.sort((a,b) => b.score - a.score);
-  resultDiv.innerHTML = `Ты похож на породу: <strong>${dogTypes[0].name}</strong>!`;
+  const topDog = dogTypes[0];
+
+  const descriptions = {
+    "Лабрадор": "Ты дружелюбный, энергичный и верный. Любишь общение и активный отдых, как настоящий лабрадор.",
+    "Бультерьер": "Ты решительный, смелый и иногда упрямый. Любишь действовать и не боишься новых вызовов — настоящий бультерьер.",
+    "Чихуахуа": "Ты маленький, но с большим характером. Осторожный с незнакомцами, но преданный друзьям — как чихуахуа.",
+    "Бордер-колли": "Ты умный, активный и внимательный. Любишь учиться и исследовать, как настоящая бордер-колли.",
+    "Хаски": "Ты энергичный, свободолюбивый и иногда непредсказуемый. Любишь приключения и движение, как хаски."
+  };
+
+  resultDiv.innerHTML = `
+    Ты похож на породу: <strong>${topDog.name}</strong>!<br>
+    <em>${descriptions[topDog.name]}</em>
+  `;
+
+  document.getElementById("quiz").innerHTML = "";
+  document.getElementById("progress").innerHTML = "";
 }
 
 showQuestion();
